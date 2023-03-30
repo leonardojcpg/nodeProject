@@ -1,7 +1,7 @@
-import repositories from "../../database";
+import {repositories} from "../../database";
 import { v4 as uuid } from "uuid";
 
-// O service é apensa responsavel pela lógica.
+// O service é apensa responsavel pela lógica
 const createRepositoryService = ({ title, url, techs }) => {
   const repository = {
     id: uuid(),

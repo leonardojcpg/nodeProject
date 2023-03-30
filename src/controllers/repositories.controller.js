@@ -24,16 +24,16 @@ export default class RepositoriesController {
 
   // buscar um recurso
   show(request, response) {
-    const {id} = request.params
+    const { id } = request.params;
 
     try {
-        const repository = findRepositoryService({id})
-        return response.json(repository)
-    } catch(err){
-        return response.status(400).json({
-            error: "error",
-            message: err.message,
-        })
+      const repository = findRepositoryService({ id });
+      return response.json(repository);
+    } catch (err) {
+      return response.status(400).json({
+        error: "error",
+        message: err.message,
+      });
     }
   }
 

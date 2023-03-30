@@ -1,4 +1,4 @@
-import repositories from '../../database'
+import {repositories} from '../../database'
 
 
 // UTILIZANDO SERVICES, É POSSIVEL UTILIZAR CLASSES TAMBEM.

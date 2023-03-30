@@ -1,3 +1,5 @@
 const repositories = []
 
-export default repositories
+const users = []
+
+export {repositories, users}
