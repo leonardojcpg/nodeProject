@@ -1,36 +1,13 @@
-const express = require('express')
-// usa-se {} quando a importação sera uma funcao
-const {uuid} = require('uuidv4')
+const express = require("express");
+import { v4 as uuid } from "uuid";
+import repositoriesRouter from "./routes/repositories.routes";
 
 const app = express();
 // para usar um json
 app.use(express.json());
-
-// utilizando uma condição
-const users = [];
-
-app.get("/hello", (req, res) => {
-    res.json({
-        hello: "world",
-    })
-})
-
-// lista os usuarios
-app.get('/users', (req, res) => {
-    return res.json(users)
-})
-
-// cria os usuarios
-app.post("/users", (req, res) => {
-    const {name, email, city} = req.body
-
-    const user = {id: uuid(), name, email, city}
-
-    users.push(user)
-
-    return res.status(201).json(user)
-})
+// todas as operaçoes que forem feitas no endpoint "/repositories", serão encaminhadas para a rota "repositoriesRouter".
+app.use("/repositories", repositoriesRouter);
 
 app.listen(3333, () => {
-    console.log('server started!')
-})
+  console.log("server started!");
+});
